@@ -68,6 +68,7 @@
   "iife": "dist/xydata.iife.js",
   "dependencies": {
     "@arction/xydata": "^1.4.0",
-    "js": "^0.1.0"
+    "js": "^0.1.0",
+    "webpack": "^5.68.0"
   }
 }
