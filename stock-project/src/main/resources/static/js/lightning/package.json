@@ -27,7 +27,6 @@
   ],
   "main": "dist/xydata.js",
   "module": "dist/xydata.es.js",
-  "type": "module",
   "types": "dist/xydata.d.ts",
   "scripts": {
     "build": "gulp build",
@@ -41,7 +40,6 @@
     "test": "gulp testWatch",
     "version": "npm run docs && git add docs",
     "build-webpack": "node_modules/webpack/bin/webpack.js --config webpack.config.js"
-
   },
   "devDependencies": {
     "@types/chai": "^4.2.14",
@@ -63,7 +61,8 @@
     "ts-node": "^9.0.0",
     "tslint": "^6.1.3",
     "typedoc": "^0.19.2",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "webpack-cli": "^4.9.2"
   },
   "publishConfig": {
     "tag": "beta"
@@ -71,6 +70,7 @@
   "iife": "dist/xydata.iife.js",
   "dependencies": {
     "@arction/xydata": "^1.4.0",
+    "babel-loader": "^8.2.3",
     "js": "^0.1.0",
     "webpack": "^5.68.0"
   }

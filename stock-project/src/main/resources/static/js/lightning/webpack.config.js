@@ -7,23 +7,11 @@ let config = {
     path: path.resolve(__dirname, ''),
     filename: 'dist/static/xydata-web.js',
   },
+  mode: "development",
+  devtool: "source-map",
   module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      loader: 'babel-loader',
-      query: {
-        presets: ['env', 'react']
-      }
-    }]
-  },
-  plugins: [
-    new webpack.ProvidePlugin({
-      "React": "react",
-    }),
-    ["transform-object-rest-spread", { "useBuiltIns": true }]
-
-  ],
-
+    rules: [{ test: /\.js$/, loader: "babel-loader" }],
+  }
 };
 
 module.exports = config;
