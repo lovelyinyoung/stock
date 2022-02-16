@@ -2,10 +2,10 @@ const webpack = require('webpack')
 const path = require('path');
 
 let config = {
-  entry: path.resolve(__dirname, 'dist/xydata.js'),
+  entry: path.resolve(__dirname, 'src/app.js'),
   output: {
     path: path.resolve(__dirname, ''),
-    filename: 'dist/static/xydata-web.js',
+    filename: 'dist/static/app-web.js',
   },
   mode: "development",
   devtool: "source-map",
