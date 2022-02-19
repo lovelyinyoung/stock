@@ -25,11 +25,11 @@ function run() {
 
   // Department names
   const teams = [
-    "Dev",
-    "Maintenance",
-    "Support",
-    "Sales",
-    "Marketing"
+    "Tesla",
+    "Nio",
+    "Coinbase",
+    "Teledoc",
+    "AT&T"
   ]
   // 1 data-point per day
   const pointResolution = 24 * 60 * 60 * 1000
@@ -71,7 +71,7 @@ function run() {
     // Disable auto cursor
     .setAutoCursorMode(AutoCursorModes.disabled)
     // Set correct chart title
-    .setTitle('Total expenses for 2018 per department')
+    .setTitle('Stock portfolio')
     // Disable mouse interactions
     .setMouseInteractions(false)
 
@@ -91,7 +91,7 @@ function run() {
   // Modify Y axis
   barChart
     .getDefaultAxisY()
-    .setTitle('Expenses ($)')
+    .setTitle('Investments ($)')
     .setStrokeStyle(style => style.setThickness(0))
     .setNibStyle(emptyLine)
     .setMouseInteractions(false)
@@ -152,7 +152,7 @@ function run() {
       )
       // Get Y axis
       lineChart
-        .getDefaultAxisY().setTitle('Expenses ($)')
+        .getDefaultAxisY().setTitle('Share price ($)')
         // Disable auto scaling
         .setScrollStrategy(AxisScrollStrategies.fitting)
         // Set Y scale interval so that costs distribution fits
@@ -188,7 +188,7 @@ function run() {
       // Create function which shows costs distribution per day for selected department
       const selectedDepartment = i => {
         // Change the chart title according to the selected department
-        lineChart.setTitle(`${teams[i]} expenses per day`)
+        lineChart.setTitle(`${teams[i]} stock chart`)
         // Remove points which belong to costs distribution of previously selected department
         lineSeries.clear()
         // Add points for costs distribution of newly selected department
@@ -250,7 +250,7 @@ function run() {
         // Modify TextBox builder to style the text field
         .addStyler(textBox => textBox
           .setTextFont(fontSettings => fontSettings.setSize(25 / window.devicePixelRatio))
-          .setText("Total company expenses")
+          .setText("Total investment")
         )
     )
   })
@@ -265,7 +265,7 @@ function run() {
       rowSpan: 1
     })
     // Specify ChartXY title
-    .setTitle('Total expenses per day')
+    .setTitle('Total investment per day')
     .setPadding({ right: 40 })
 
   totalCostsChart
@@ -305,7 +305,7 @@ function run() {
       .addRow('Date: ' + series.axisX.formatValue(Xvalue))
       .addRow('Expenses: $' + Yvalue.toFixed(2))
   })
-  totalCostsChart.getDefaultAxisY().setTitle('Expenses ($)')
+  totalCostsChart.getDefaultAxisY().setTitle('Investment ($)')
 }
 
 window.addEventListener('load', run, false)
