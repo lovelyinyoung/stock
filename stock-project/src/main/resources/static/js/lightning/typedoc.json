@@ -1,0 +1,14 @@
+{
+  "inputFiles": ["./src"],
+  "target": "es5",
+  "excludeProtected": true,
+  "excludePrivate": true,
+  "excludeExternals": true,
+  "excludeNotExported": true,
+  "out": "docs",
+  "mode": "file",
+  "tsConfig": "tsconfig.json",
+  "name": "XYData Generator API Documentation",
+  "hideGenerator": true,
+  "exclude": "**/node_modules/**"
+}

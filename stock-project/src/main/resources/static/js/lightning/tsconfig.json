@@ -1,0 +1,30 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "dist",
+    "module": "ES2015",
+    "target": "es5",
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "removeComments": true,
+    "pretty": true,
+    "experimentalDecorators": true,
+    "strict": true,
+    "baseUrl": "src",
+    "downlevelIteration": true,
+    "lib": [
+      "es2015.iterable",
+      "es2015",
+      "es2016.array.include",
+      "dom"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "test",
+    "dist",
+    "dev",
+    "docs"
+  ]
+}
