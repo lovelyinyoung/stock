@@ -39,7 +39,7 @@
     "prepublishOnly": "gulp build",
     "test": "gulp testWatch",
     "version": "npm run docs && git add docs",
-    "build-webpack": "node_modules/webpack/bin/webpack.js --config webpack.config.js"
+    "build-webpack": "node node_modules/webpack/bin/webpack.js --config webpack.config.js"
   },
   "devDependencies": {
     "@types/chai": "^4.2.14",
