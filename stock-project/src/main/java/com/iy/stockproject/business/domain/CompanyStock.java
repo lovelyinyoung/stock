@@ -1,26 +1,13 @@
-package com.iy.stockproject.data.entity;
+package com.iy.stockproject.business.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import java.util.Currency;
 import java.util.Date;
 
-@Entity
-@Table(name="STOCK")
-public class Stock {
-    //TODO: check what Yahoo finance AIP provides
-
-    @Id
-    @Column(name="COMPANY_ID")
+//DTO
+public class CompanyStock {
     private long companyId;
-    //TODO: double check if foreign key can be done like this
-
-    @Column(name="PRICE")
+    private String tickerSymbol;
     private Currency price;
-
-    @Column(name="DATE")
     private Date date;
 
     public long getCompanyId() {
@@ -29,6 +16,14 @@ public class Stock {
 
     public void setCompanyId(long companyId) {
         this.companyId = companyId;
+    }
+
+    public String getTickerSymbol() {
+        return tickerSymbol;
+    }
+
+    public void setTickerSymbol(String tickerSymbol) {
+        this.tickerSymbol = tickerSymbol;
     }
 
     public Currency getPrice() {
