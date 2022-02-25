@@ -18,7 +18,7 @@ public class Stock {
     //TODO: double check if foreign key can be done like this
 
     @Column(name="PRICE")
-    private Currency price;
+    private double price;
 
     @Column(name="DATE")
     private Date date;
@@ -31,11 +31,11 @@ public class Stock {
         this.companyId = companyId;
     }
 
-    public Currency getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(Currency price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

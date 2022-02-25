@@ -7,11 +7,7 @@ import com.iy.stockproject.data.repository.CompanyRepository;
 import com.iy.stockproject.data.repository.StockRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class CompanyStockService {
@@ -19,6 +15,19 @@ public class CompanyStockService {
     private StockRepository stockRepository;
 
     //TODO: get data from TD API
+
+    //Test Mockup
+    public List<CompanyStock> getAllCompanyStocks() {
+        List<CompanyStock> companyStocks = new ArrayList<>();
+        CompanyStock companyStock = new CompanyStock();
+        companyStock.setCompanyId(0);
+        companyStock.setTickerSymbol("TSLA");
+        companyStock.setPrice(720.00);
+//        companyStock.setDate(date);
+        companyStocks.add(companyStock);
+
+        return companyStocks;
+    }
 
     public List<CompanyStock> getCompanyStocksForDate(Date date) {
         Iterable<Company> companies = this.companyRepository.findAll();

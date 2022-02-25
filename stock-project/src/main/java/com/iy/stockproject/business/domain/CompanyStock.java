@@ -7,7 +7,7 @@ import java.util.Date;
 public class CompanyStock {
     private long companyId;
     private String tickerSymbol;
-    private Currency price;
+    private double price;
     private Date date;
 
     public long getCompanyId() {
@@ -26,11 +26,11 @@ public class CompanyStock {
         this.tickerSymbol = tickerSymbol;
     }
 
-    public Currency getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(Currency price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
