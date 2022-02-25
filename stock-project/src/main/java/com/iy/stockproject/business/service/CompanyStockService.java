@@ -13,12 +13,12 @@ import java.util.*;
 public class CompanyStockService {
     private CompanyRepository companyRepository;
     private StockRepository stockRepository;
-
+    private List<CompanyStock> companyStocks;
     //TODO: get data from TD API
 
     //Test Mockup
     public List<CompanyStock> getAllCompanyStocks() {
-        List<CompanyStock> companyStocks = new ArrayList<>();
+        companyStocks = new ArrayList<>();
         CompanyStock companyStock = new CompanyStock();
         companyStock.setCompanyId(0);
         companyStock.setTickerSymbol("TSLA");
@@ -27,6 +27,11 @@ public class CompanyStockService {
         companyStocks.add(companyStock);
 
         return companyStocks;
+    }
+
+    public CompanyStock getCompanyStock(long id) {
+        return companyStocks.stream().filter(companyStock ->
+                companyStock.getCompanyId() == id).findFirst().get();
     }
 
     public List<CompanyStock> getCompanyStocksForDate(Date date) {

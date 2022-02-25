@@ -11,20 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 public class StockProjectApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(StockProjectApplication.class, args);
 	}
-
-//	@RestController
-//	@RequestMapping("/graph")
-//	public class CompanyStockWebController {
-//		@Autowired
-//		private CompanyRepository companyRepository;
-//
-//		@GetMapping
-//		public Iterable<Company> getCompanies() {
-//			return this.companyRepository.findAll();
-//		}
-//	}
 }
