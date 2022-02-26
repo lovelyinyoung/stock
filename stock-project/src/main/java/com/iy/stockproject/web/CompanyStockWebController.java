@@ -25,17 +25,23 @@ public class CompanyStockWebController {
         return companyStocks;
     }
 
-    @GetMapping("/companystocks/{companyId}")
-    public CompanyStock getCompanyStock(@PathVariable long companyId) {
-        CompanyStock companyStock = this.companyStockService.getCompanyStock(companyId);
+    @GetMapping("/companystocks/{tickerSymbol}")
+    public String getCompanyStockByTickerSymbol(@PathVariable String tickerSymbol) {
+        String companyStock = this.companyStockService.getCompanyStockByTickerSymbol(tickerSymbol);
         return companyStock;
     }
 
-    @GetMapping("/companystocks/{companyID}/{date}")
-    public String getCompanyStocks(@RequestParam(value = "date", required = false) String dateString, Model model) {
-        Date date = DateUtils.createDateFromDate(dateString);
-        List<CompanyStock> companyStocks = this.companyStockService.getCompanyStocksForDate(date);
-        model.addAttribute("companyStocks", companyStocks);
-        return "companyStocks";
-    }
+//    @GetMapping("/companystocks/{companyId}")
+//    public CompanyStock getCompanyStockById(@PathVariable long companyId) {
+//        CompanyStock companyStock = this.companyStockService.getCompanyStockById(companyId);
+//        return companyStock;
+//    }
+//
+//    @GetMapping("/companystocks/{companyID}/{date}")
+//    public String getCompanyStocks(@RequestParam(value = "date", required = false) String dateString, Model model) {
+//        Date date = DateUtils.createDateFromDate(dateString);
+//        List<CompanyStock> companyStocks = this.companyStockService.getCompanyStocksForDate(date);
+//        model.addAttribute("companyStocks", companyStocks);
+//        return "companyStocks";
+//    }
 }

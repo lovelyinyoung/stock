@@ -5,6 +5,7 @@ import com.iy.stockproject.data.entity.Company;
 import com.iy.stockproject.data.entity.Stock;
 import com.iy.stockproject.data.repository.CompanyRepository;
 import com.iy.stockproject.data.repository.StockRepository;
+import com.iy.stockproject.web.HttpRequestor;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -14,10 +15,9 @@ public class CompanyStockService {
     private CompanyRepository companyRepository;
     private StockRepository stockRepository;
     private List<CompanyStock> companyStocks;
-    //TODO: get data from TD API
 
-    //Test Mockup
     public List<CompanyStock> getAllCompanyStocks() {
+        //TODO: retrieve ticker symbols I have invested from DB and call HttpRequestor
         companyStocks = new ArrayList<>();
         CompanyStock tesla = new CompanyStock();
         tesla.setCompanyId(0);
@@ -36,7 +36,11 @@ public class CompanyStockService {
         return companyStocks;
     }
 
-    public CompanyStock getCompanyStock(long id) {
+    public String getCompanyStockByTickerSymbol(String tickerSymbol) {
+        return new HttpRequestor().do_request(tickerSymbol);
+    }
+
+    public CompanyStock getCompanyStockById(long id) {
         return companyStocks.stream().filter(companyStock ->
                 companyStock.getCompanyId() == id).findFirst().get();
     }
