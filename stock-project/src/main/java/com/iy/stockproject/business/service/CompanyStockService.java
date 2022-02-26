@@ -19,12 +19,19 @@ public class CompanyStockService {
     //Test Mockup
     public List<CompanyStock> getAllCompanyStocks() {
         companyStocks = new ArrayList<>();
-        CompanyStock companyStock = new CompanyStock();
-        companyStock.setCompanyId(0);
-        companyStock.setTickerSymbol("TSLA");
-        companyStock.setPrice(720.00);
+        CompanyStock tesla = new CompanyStock();
+        tesla.setCompanyId(0);
+        tesla.setTickerSymbol("TSLA");
+        tesla.setPrice(720.00);
 //        companyStock.setDate(date);
-        companyStocks.add(companyStock);
+        companyStocks.add(tesla);
+
+        CompanyStock teledoc = new CompanyStock();
+        teledoc.setCompanyId(1);
+        teledoc.setTickerSymbol("TELDOC");
+        teledoc.setPrice(150.00);
+//        companyStock.setDate(date);
+        companyStocks.add(teledoc);
 
         return companyStocks;
     }

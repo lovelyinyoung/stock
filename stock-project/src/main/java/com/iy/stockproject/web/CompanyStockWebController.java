@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -20,19 +19,19 @@ public class CompanyStockWebController {
         this.companyStockService = companyStockService;
     }
 
-    @RequestMapping("/companystocks")
+    @GetMapping("/companystocks")
     public List<CompanyStock> getCompanyStocks(Model model) {
         List<CompanyStock> companyStocks = this.companyStockService.getAllCompanyStocks();
         return companyStocks;
     }
 
-    @RequestMapping("/companystocks/{companyId}")
+    @GetMapping("/companystocks/{companyId}")
     public CompanyStock getCompanyStock(@PathVariable long companyId) {
         CompanyStock companyStock = this.companyStockService.getCompanyStock(companyId);
         return companyStock;
     }
 
-    @RequestMapping("/companystocks/{date}")
+    @GetMapping("/companystocks/{companyID}/{date}")
     public String getCompanyStocks(@RequestParam(value = "date", required = false) String dateString, Model model) {
         Date date = DateUtils.createDateFromDate(dateString);
         List<CompanyStock> companyStocks = this.companyStockService.getCompanyStocksForDate(date);
